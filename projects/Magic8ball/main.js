@@ -37,7 +37,7 @@ const generateApiAnswer = input => {
 	const options = {
 	  method: 'GET',
 	  url: 'https://magic-8-ball1.p.rapidapi.com/my_answer/',
-	  params: {question: 'input'},
+	  params: {question: `${input}`},
 	  headers: {
 	    'X-RapidAPI-Key': '138f7b131emshae28ee3e133cdc2p178a3djsn25b317e33ff6',
 	    'X-RapidAPI-Host': 'magic-8-ball1.p.rapidapi.com'
@@ -45,6 +45,7 @@ const generateApiAnswer = input => {
 	};
 	axios.request(options).then(function (response) {
 		answer.innerHTML = `<span>Answer:</span> ${response.data.answer}`
+		console.log(response);
 	}).catch(function (error) {
 		console.error(error);
 	});
