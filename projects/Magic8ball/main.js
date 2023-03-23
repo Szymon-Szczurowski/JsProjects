@@ -13,6 +13,7 @@ const shakeBall = () => {
 
 const checkInput = () => {
 	const text = input.value
+	
 
 	if (text === '') {
 		error.textContent = 'You have to ask the question!'
