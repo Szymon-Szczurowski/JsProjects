@@ -49,31 +49,3 @@ const API_KEY = 'JksyVbhQ9rNEKORlxwDfuR750vzk3RFH'
 
 
 
-// WERSJA 2
-
-
-
-// const calcualte2 = () => {
-// 	let myHeaders = new Headers();
-// 	myHeaders.append("apikey", API_KEY);
-
-// 	let requestOptions = {
-// 	  method: 'GET',
-// 	  redirect: 'follow',
-// 	  headers: myHeaders
-// 	};
-
-// 	fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${currencyTwo.value}&from=${currencyOne.value}&amount=${amountOne.value}`, requestOptions)
-
-// 	  .then(response => response.json())
-// 	  .then(data =>  {
-//         console.log(data);
-// 	//    rateInfo.textContent  = `${amountOne.value} ${currencyFrom} = ${data.result.toFixed(4)} ${currencyTo}`
-// 	//    amountTwo.value = data.result.toFixed(2)
-    
-
-// 	})
-// 	  .catch(error => console.log('error', error));
-// }
-
-// calcualte2()
