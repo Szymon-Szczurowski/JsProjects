@@ -53,6 +53,9 @@ body{
     flex-wrap: wrap;
     padding: 20px;
 }
+.note-body{
+    word-wrap: break-word;
+}
 
 .note{
     margin: 40px 20px;
