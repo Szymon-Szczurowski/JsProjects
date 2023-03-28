@@ -1,10 +1,24 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(120, 120, 120);
+}
+
 input {
     display: block;
     width: 17rem;
     margin: 0.3rem;
-    border: 1px solid silver;
+    border: 1px solid rgb(41, 40, 40);
     font-size: 2rem;
     text-align: right;
+}
+
+.calculator{
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .numbers button, .operators button {
@@ -14,6 +28,7 @@ input {
     margin: 0.1rem;
     border: 2px solid silver;
     outline-width: 0;
+    cursor: pointer;
 }
 
 button.big-button {
