@@ -28,15 +28,33 @@ const transactionList = {
 		newTransaction.classList.add('transaction')
 		newTransaction.setAttribute('id', cardID)
 
+        let icon
+        switch (select) {
+            case 'income':
+              icon = 'fas fa-money-bill-wave'
+              break;
+            case 'shopping':
+                icon = 'fas fa-cart-arrow-down'
+                break;
+            case 'food':
+                icon = 'fas fa-hamburger'
+                break;
+            case 'cinema':
+                icon = 'fas fa-film'
+                break;
+          }
+
 		newTransaction.innerHTML = `
-        <p class="transaction-name"><i class="fas fa-money-bill-wave"></i>${name}</p>
+        <p class="transaction-name"><i class="${icon}"></i>${name}</p>
         <p class="transaction-amount">${amount}zł <button class="delete" onclick="delateTransaction(${cardID})"><i class="fas fa-times"></i></button></p>
         `
-		if (select === '[ + ] Income') {
-			incomeArea.appendChild(newTransaction)
-		} else {
-			expensesArea.appendChild(newTransaction)
-		}
+		// if (select === 'income') {
+		// 	incomeArea.appendChild(newTransaction)
+		// } else {
+		// 	expensesArea.appendChild(newTransaction)
+		// }
+
+        select === 'income' ? incomeArea.appendChild(newTransaction) : expensesArea.appendChild(newTransaction)
 
 		cardID++
 	},
@@ -51,18 +69,25 @@ const functionPanel = {
 	save: function () {
 		const nameValue = nameInput.value
 		const amountValue = amountInput.value
-		const selectContent = category.options[category.selectedIndex].textContent
+		const selectContent = category.options[category.selectedIndex].value
 
-		allMoney += parseFloat(amountValue)
-		optionAvailableMoney.textContent = `${allMoney}zł`
+        if(nameValue !== '' && amountValue !== '' && selectContent !== 'none' ){
+            allMoney += parseFloat(amountValue)
+            optionAvailableMoney.textContent = `${allMoney}zł`
+            transactionList.addtransaction(nameValue, amountValue, selectContent)
+            functionPanel.clearInput()
+            transactionPanel.style.display = 'none'
+        }else{
+            alert('Wypełnij wszystkie pola!')
+        }
 
-		transactionList.addtransaction(nameValue, amountValue, selectContent)
-		functionPanel.clearInput()
-		transactionPanel.style.display = 'none'
 	},
 
 	cancel: function () {
 		transactionPanel.style.display = 'none'
+        nameInput.value = ''
+		amountInput.value = ''
+		category.selectedIndex = 0
 	},
 
 	clearInput: function () {
@@ -77,11 +102,13 @@ const colorChange = {
 	lightColorChange: function () {
 		root.style.setProperty('--first-color', '#F9F9F9')
 		root.style.setProperty('--second-color', '#14161F')
+		root.style.setProperty('--border-color', 'rgba(0, 0, 0, .2)');
 	},
 
 	darkColorChange: function () {
 		root.style.setProperty('--first-color', '#14161F')
 		root.style.setProperty('--second-color', '#F9F9F9')
+		root.style.setProperty('--border-color', 'rgba(255, 255, 255, .4)');
 	},
 }
 
