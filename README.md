@@ -1,21 +1,21 @@
--Finance-Manager: https://szymon-szczurowski.github.io/Finance-Manager/
+[Finance Manager](https://szymonszczurowski.github.io/Finance-Manager/)
 
--Magic 8 Ball: https://szymon-szczurowski.github.io/Magic-8-Ball/
+[Magic 8 Ball](https://szymonszczurowski.github.io/Magic-8-Ball/)
 
--My Notes: https://szymon-szczurowski.github.io/My-Notes/
+[My Notes](https://szymonszczurowski.github.io/My-Notes/)
 
--Form Validate: https://szymon-szczurowski.github.io/Form-Validate/
+[Form Validate](https://szymonszczurowski.github.io/Form-Validate/)
 
--Bill And Tip Calculator: https://szymon-szczurowski.github.io/Bill-And-Tip-Calculator/
+[Bill And Tip Calculator](https://szymonszczurowski.github.io/Bill-And-Tip-Calculator/)
 
--Exchange Rate App: https://szymon-szczurowski.github.io/Exchange-Rate-App/
+[Exchange Rate App](https://szymonszczurowski.github.io/Exchange-Rate-App/)
 
--Search Engine: https://szymon-szczurowski.github.io/Search-Engine/
+[Search Engine](https://szymonszczurowski.github.io/Search-Engine/)
 
--Stoper: https://szymon-szczurowski.github.io/Stoper/
+[Stoper](https://szymonszczurowski.github.io/Stoper/)
 
--Weather App: https://szymon-szczurowski.github.io/Weather-App/
+[Weather App](https://szymonszczurowski.github.io/Weather-App/)
 
--Weather App 2: https://szymon-szczurowski.github.io/Weather-App-2/
+[Weather App 2](https://szymonszczurowski.github.io/Weather-App-2/)
 
--To Do Lista: https://szymon-szczurowski.github.io/To-Do-Lista/
+[To Do Lista](https://szymonszczurowski.github.io/To-Do-Lista/)
