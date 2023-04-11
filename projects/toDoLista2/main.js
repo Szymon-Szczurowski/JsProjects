@@ -34,6 +34,8 @@ const prepareDOMEvents = () => {
     ADD_BTN.addEventListener('click', addNewTask);
     TO_DO_INPUT.addEventListener('keyup', enterCheck);
     UL_LIST.addEventListener('click', checkClick)
+    ADD_POPUP_BTN.addEventListener('click', changeTodo)
+    CLOSE_TODO_BTN.addEventListener('click', closePopup)
 }
 
 const addNewTask = () => {
@@ -90,15 +92,46 @@ const checkClick = e => {
             e.target.closest('button').classList.toggle('completed')
 
         }else if(e.target.closest('button').classList.contains('edit')){
-            deleteTask()
+            editTask(e)
         }else if(e.target.closest('button').classList.contains('delete')){
-            console.log('delete');
+            deleteTask(e)
         }
     }
 }
 
+const editTask = (e) => {
+    const oldTodo = e.target.closest('li').id;
+    EDITED_TODO = document.getElementById(oldTodo)
+    console.log(EDITED_TODO)
+    POPUP_INPUT.value = EDITED_TODO.firstChild.textContent
+
+    POPUP.style.display = 'flex'
+}
+
+const changeTodo = () => {
+    if(POPUP_INPUT.value !== ''){
+        EDITED_TODO.firstChild.textContent = POPUP_INPUT.value
+        POPUP.style.display = 'none'
+        POPUP_INFO.textContent = ''
+    }else{
+        POPUP_INFO.textContent = 'Musisz podać jakąś treść '
+    }
+
+}
+
 const deleteTask = e => {
-    const deleteTodo = e.target.closest('li')
+    const deleteTodo = e.target.closest('li');
+    deleteTodo.remove();
+
+    if (ALL_TASKS.length === 0) {
+        ALERT_INFO.innerText = 'Brak zadań na liście.';
+    }
+}
+
+const closePopup = () => {
+    POPUP.style.display = 'none'
+    POPUP_INFO.textContent = ''
+
 }
 
 document.addEventListener('DOMContentLoaded', main);
